@@ -1,0 +1,28 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # إذا كان المشروع تحت مجلد فرعي (مثل http://localhost/CRUD/) اترك المسار كما هو.
+    # إذا كان DocumentRoot يشير مباشرةً إلى مجلد المشروع، غيّر السطر التالي إلى: RewriteBase /
+    RewriteBase /Levels/
+
+    Options -MultiViews
+
+    # مسارات API نظيفة — الطريقة تُحدَّد في PHP كما هي حالياً
+    # GET    /api/levels          → قائمة المراكز
+    # POST   /api/levels          → إنشاء
+    # POST   /api/levels/update   → تحديث
+    # DELETE /api/levels          → حذف
+
+    RewriteCond %{REQUEST_METHOD} =GET
+    RewriteRule ^api/levels/?$ index.php [L,QSA]
+
+    RewriteCond %{REQUEST_METHOD} =POST
+    RewriteRule ^api/levels/update/?$ update.php [L,QSA]
+
+    RewriteCond %{REQUEST_METHOD} =POST
+    RewriteRule ^api/levels/?$ create.php [L,QSA]
+
+    RewriteCond %{REQUEST_METHOD} =DELETE
+    RewriteRule ^api/levels/?$ delete.php [L,QSA]
+</IfModule>
+ 
