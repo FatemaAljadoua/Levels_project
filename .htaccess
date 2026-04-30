@@ -1,7 +1,7 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # إذا كان المشروع تحت مجلد فرعي (مثل http://localhost/CRUD/) اترك المسار كما هو.
+    # إذا كان المشروع تحت مجلد فرعي (مثل http://localhost/Levels/) اترك المسار كما هو.
     # إذا كان DocumentRoot يشير مباشرةً إلى مجلد المشروع، غيّر السطر التالي إلى: RewriteBase /
     RewriteBase /Levels/
 
