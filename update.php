@@ -1,11 +1,11 @@
 <?php
 require_once "Helpers/headers.php";
-send_json_api_headers('POST');
+send_json_api_headers('PUT');
 
 require_once "Config/conn.php";
 require_once "Helpers/response.php";
 
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+if ($_SERVER["REQUEST_METHOD"] !== "PUT") {
     response(405, "Only POST Method is allowed");
 }
 
