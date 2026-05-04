@@ -10,13 +10,13 @@
     # مسارات API نظيفة — الطريقة تُحدَّد في PHP كما هي حالياً
     # GET    /api/levels          → قائمة المراكز
     # POST   /api/levels          → إنشاء
-    # POST   /api/levels/update   → تحديث
+    # PUT   /api/levels/update   → تحديث
     # DELETE /api/levels          → حذف
 
     RewriteCond %{REQUEST_METHOD} =GET
     RewriteRule ^api/levels/?$ index.php [L,QSA]
 
-    RewriteCond %{REQUEST_METHOD} =POST
+    RewriteCond %{REQUEST_METHOD} =PUT
     RewriteRule ^api/levels/update/?$ update.php [L,QSA]
 
     RewriteCond %{REQUEST_METHOD} =POST
